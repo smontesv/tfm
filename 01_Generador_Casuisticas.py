@@ -379,7 +379,7 @@ def CreaRegistrosErrorTipoII(pHost, pUser, pPassword, pDB, pNumEjemplos):
 #99.- Rutina Principal
 stHost =  'localhost'
 stUser = 'root'
-stPassword = 'Bokwut_08'
+stPassword = 'xxxxxxxxxx'
 stDB = "tfm_smv"
 CreaRegistrosIniciles(stHost,stUser,stPassword,stDB)
 NumEjemplos = 50
