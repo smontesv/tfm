@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="InfluenceDiagram">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Pulse dos veces para incluir/modificar comentario>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <AdditionalProperties />
+    <Variables>
+      <Variable name="Sexo" type="finiteStates" role="chance">
+        <Coordinates x="176" y="73" />
+        <States>
+          <State name="M" />
+          <State name="H" />
+        </States>
+      </Variable>
+      <Variable name="Formacion" type="finiteStates" role="chance">
+        <Coordinates x="186" y="142" />
+        <States>
+          <State name="Insuficiente" />
+          <State name="Suficiente" />
+        </States>
+      </Variable>
+      <Variable name="EVP_0" type="finiteStates" role="chance">
+        <Coordinates x="178" y="218" />
+        <States>
+          <State name="Bajo" />
+          <State name="Alto" />
+        </States>
+      </Variable>
+      <Variable name="EVP_1" type="finiteStates" role="chance">
+        <Coordinates x="416" y="124" />
+        <States>
+          <State name="ausente" />
+          <State name="presente" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Sexo" />
+        <Variable name="EVP_1" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Formacion" />
+        <Variable name="EVP_1" />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Sexo" />
+        </Variables>
+        <Values>0.4403 0.5597</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Formacion" />
+        </Variables>
+        <Values>0.5287 0.4713</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="EVP_0" />
+        </Variables>
+        <Values>0.71 0.29</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="EVP_1" />
+          <Variable name="Sexo" />
+          <Variable name="Formacion" />
+        </Variables>
+        <Values>0.5878 0.4122 0.5926 0.4074 0.2747 0.7253 0.3732 0.6268</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>
